@@ -1,5 +1,7 @@
 SELECT
 	r.m_dates,
+	CASE FLOOR(DAY(r.m_date-1)/10) WHEN 0 THEN 'E' WHEN 1 THEN 'M' ELSE 'L' END AS 'season',
+	MONTH(r.m_date) AS 'm_month',	
 	SUM(IF(r.sid = '45045',r.m_value, 0)) AS 'S45045',
 	SUM(IF(r.sid = '50137',r.m_value, 0)) AS 'S50137',
 	SUM(IF(r.sid = '50431',r.m_value, 0)) AS 'S50431',
