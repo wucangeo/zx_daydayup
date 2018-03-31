@@ -67,7 +67,8 @@ figure
 %ax = ptable([2 3],[2 2;4 6]);
 %iw=2;jw=3;
 %alphab = 'ABCDEFG';
-alphab={'NOMO','M-NOMO','Torri','Shirazi'};
+%alphab={'NOMO','M-NOMO','Torri','Shirazi'};
+alphab={'EPIC','Shirazi','Torri'};
 %subplot(iw,jw,2); 
 %plot(BUOY');
 %grid on,xlabel('time (day)');ylabel('heat fluxes (W/m^2)');
@@ -83,7 +84,7 @@ for ii = 1 : length(tt)
     set(tt(ii),'fontsize',9,'fontweight','bold')
     set(pp(ii),'markersize',12)
     if ii == 1
-        set(tt(ii),'String','EPIC');
+        set(tt(ii),'String','NOMO');
     else
         set(tt(ii),'String',alphab(ii-1));
     end
